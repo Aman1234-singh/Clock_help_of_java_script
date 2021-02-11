@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>clock!</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #clock {
+            text-align: center;
+            padding: 10px;
+            background-color: burlywood;
+        }
+        #time:hover{
+            background-color: chartreuse;
+        }
+    </style>
+  
+</head>
+
+<body>
+    <h1 id="clock"> TIME AND DATE PROJECT </h1>
+
+    <div class="container my-4">
+        <div class="jumbotron">
+            <h1 class="display-4">Current time is <span id="time"></span></h1>
+            <p class="lead">Hello this is my simple JavaScript project in .<br> To see the time and date click the button :)</p>
+            <hr class="my-4">
+            <p id="clock1"> </p>
+            <a id="btn1" class="btn btn-primary btn-lg" href="#" role="button">Browse Times</a>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+        <script>
+      
+
+
+            document.getElementById("btn1").addEventListener("click",function()
+        {
+        
+            let a;
+            let date;
+            let time;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            setInterval(() => {
+                a = new Date()
+                date = a.toLocaleDateString(undefined, options);
+                time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+                document.getElementById('time').innerHTML = time + " <br>on " + date;
+            }, 1000);
+
+            
+        });
+        </script>
+</body>
+
+</html>
